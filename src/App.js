@@ -1,11 +1,11 @@
 import './App.css'
-import Clock from './clock'
+import Toggle from './toggle'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <Clock />
+      <Toggle />
     </div>
   )
 }
