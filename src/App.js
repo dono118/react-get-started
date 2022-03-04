@@ -1,11 +1,11 @@
 import './App.css'
-import Toggle from './toggle'
+import LoginControl from './loginControl'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <Toggle />
+      <LoginControl />
     </div>
   )
 }
