@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
+import './style.less'
 
 function LoginButton(props) {
-  return <button onClick={props.onClick}>Login</button>
+  return (
+    <button className="login-btn" onClick={props.onClick}>
+      Login
+    </button>
+  )
 }
 
 function LogoutButton(props) {
@@ -51,7 +56,7 @@ class LoginControl extends Component {
     }
 
     return (
-      <div>
+      <div className="loginControl">
         <Greeting isLoggedIn={isLoggedIn} />
         {button}
       </div>

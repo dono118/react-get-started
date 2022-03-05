@@ -1,5 +1,5 @@
 import './App.css'
-import LoginControl from './loginControl'
+import LoginControl from '@/views/loginControl'
 
 function App() {
   return (
