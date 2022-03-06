@@ -1,11 +1,11 @@
 import './App.css'
-import LoginControl from '@/views/loginControl'
+import Warning from '@/views/warning'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <LoginControl />
+      <Warning />
     </div>
   )
 }
