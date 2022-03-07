@@ -1,15 +1,11 @@
 import './App.css'
-import Blog from '@/views/blog'
+import NameForm from '@/views/forms/NameForm'
 
 function App() {
-  const posts = [
-    { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
-    { id: 2, title: 'Installation', content: 'You can install React from npm.' }
-  ]
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <Blog posts={posts} />
+      <NameForm />
     </div>
   )
 }
