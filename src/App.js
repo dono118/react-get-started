@@ -1,11 +1,11 @@
 import './App.css'
-import EssayForm from '@/views/forms/EssayForm'
+import FlavorForm from '@/views/forms/FlavorForm'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <EssayForm />
+      <FlavorForm />
     </div>
   )
 }
