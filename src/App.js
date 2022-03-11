@@ -1,11 +1,11 @@
 import './App.css'
-import Reservation from '@/views/forms/Reservation'
+import TempCalculator from '@/views/tempCalculator'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <Reservation />
+      <TempCalculator />
     </div>
   )
 }
