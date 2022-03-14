@@ -1,11 +1,11 @@
 import './App.css'
-import TempCalculator from '@/views/tempCalculator'
+import SignUpDialog from '@/views/signUpDialog'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <TempCalculator />
+      <SignUpDialog />
     </div>
   )
 }
