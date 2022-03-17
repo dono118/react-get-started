@@ -1,11 +1,11 @@
 import './App.css'
-import ContextDemo from '@/views/contextDemo'
+import CustomTextInput from '@/views/customTextInput'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <ContextDemo />
+      <CustomTextInput />
     </div>
   )
 }
