@@ -1,11 +1,11 @@
 import './App.css'
-import HocDemo from '@/views/hocDemo'
+import TodoList from '@/views/TodoList'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <HocDemo />
+      <TodoList />
     </div>
   )
 }
