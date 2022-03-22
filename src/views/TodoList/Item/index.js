@@ -3,11 +3,12 @@ import './style.less'
 
 export default class index extends Component {
   render() {
+    const { name, done } = this.props
     return (
       <li>
         <label>
-          <input type="checkbox" />
-          <span>xxx</span>
+          <input type="checkbox" defaultChecked={done} />
+          <span>{name}</span>
         </label>
         <button className="btn btn-danger" style={{ display: 'none' }}>
           删除
