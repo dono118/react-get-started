@@ -29,13 +29,24 @@ class TodoList extends Component {
       }
     ]
   }
+
+  // 添加todo
+  addTodo = todoObj => {
+    console.log(todoObj)
+    const { todos } = this.state
+    const newTodos = [todoObj, ...todos]
+    this.setState({
+      todos: newTodos
+    })
+  }
+
   render() {
     const { todos } = this.state
     return (
       <div className="todo-container">
         <div className="todo-wrap">
           <h2>TodoList案例</h2>
-          <Header />
+          <Header addTodo={this.addTodo} />
           <List todos={todos} />
           <Footer />
         </div>
