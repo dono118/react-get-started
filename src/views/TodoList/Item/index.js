@@ -14,8 +14,15 @@ export default class index extends Component {
     }
   }
 
+  // 更新todo状态
+  handleCheck = id => {
+    return event => {
+      this.props.updateTodo(id, event.target.checked)
+    }
+  }
+
   render() {
-    const { name, done } = this.props
+    const { id, name, done } = this.props
     const { mouse } = this.state
     return (
       <li
@@ -24,7 +31,11 @@ export default class index extends Component {
         style={{ backgroundColor: mouse ? '#ddd' : '#fff' }}
       >
         <label>
-          <input type="checkbox" defaultChecked={done} />
+          <input
+            type="checkbox"
+            defaultChecked={done}
+            onChange={this.handleCheck(id)}
+          />
           <span>{name}</span>
         </label>
         <button
