@@ -54,6 +54,19 @@ class TodoList extends Component {
     })
   }
 
+  // 删除todo
+  deleteTodo = id => {
+    // 获取状态中的todos
+    const { todos } = this.state
+    // 删除指定id的todo对象
+    const newTodos = todos.filter(item => {
+      return item.id !== id
+    })
+    this.setState({
+      todos: newTodos
+    })
+  }
+
   render() {
     const { todos } = this.state
     return (
@@ -61,7 +74,11 @@ class TodoList extends Component {
         <div className="todo-wrap">
           <h2>TodoList案例</h2>
           <Header addTodo={this.addTodo} />
-          <List todos={todos} updateTodo={this.updateTodo} />
+          <List
+            todos={todos}
+            updateTodo={this.updateTodo}
+            deleteTodo={this.deleteTodo}
+          />
           <Footer />
         </div>
       </div>

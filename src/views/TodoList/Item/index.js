@@ -30,6 +30,13 @@ export default class index extends Component {
     }
   }
 
+  // 删除todo
+  handleDelete = id => {
+    if (window.confirm('确定要删除吗？')) {
+      this.props.deleteTodo(id)
+    }
+  }
+
   render() {
     const { id, name, done } = this.props
     const { mouse } = this.state
@@ -48,6 +55,7 @@ export default class index extends Component {
           <span>{name}</span>
         </label>
         <button
+          onClick={() => this.handleDelete(id)}
           className="btn btn-danger"
           style={{ display: mouse ? 'block' : 'none' }}
         >
