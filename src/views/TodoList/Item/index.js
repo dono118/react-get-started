@@ -49,7 +49,7 @@ export default class index extends Component {
         <label>
           <input
             type="checkbox"
-            defaultChecked={done}
+            checked={done}
             onChange={this.handleCheck(id)}
           />
           <span>{name}</span>

@@ -67,6 +67,33 @@ class TodoList extends Component {
     })
   }
 
+  // 全选或取消全选
+  checkAllTodo = done => {
+    // 获取状态中的todos
+    const { todos } = this.state
+    // 加工数据
+    const newTodos = todos.map(item => {
+      return { ...item, done }
+    })
+    // 更新状态
+    this.setState({
+      todos: newTodos
+    })
+  }
+
+  // 清除所有已完成todo
+  clearAllDone = () => {
+    // 获取状态中的todos
+    const { todos } = this.state
+    // 过滤数据
+    const newTodos = todos.filter(item => {
+      return !item.done
+    })
+    this.setState({
+      todos: newTodos
+    })
+  }
+
   render() {
     const { todos } = this.state
     return (
@@ -79,7 +106,11 @@ class TodoList extends Component {
             updateTodo={this.updateTodo}
             deleteTodo={this.deleteTodo}
           />
-          <Footer />
+          <Footer
+            todos={todos}
+            checkAllTodo={this.checkAllTodo}
+            clearAllDone={this.clearAllDone}
+          />
         </div>
       </div>
     )
