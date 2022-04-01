@@ -9,7 +9,7 @@ export default class Search extends Component {
     } = this
     console.log(keyword)
     // 发送网络请求
-    axios.get(`http://localhost:3000/api/search/users2?q=${keyword}`).then(
+    axios.get(`/api/search/users2?q=${keyword}`).then(
       res => {
         // 请求成功
         console.log('success==>', res.data)
