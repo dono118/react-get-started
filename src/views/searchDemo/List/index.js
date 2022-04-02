@@ -4,13 +4,13 @@ import './style.less'
 
 export default class List extends Component {
   render() {
+    const { users } = this.props
     return (
       <div className="row">
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        {users &&
+          users.map(item => {
+            return <Item key={item.id} {...item} />
+          })}
       </div>
     )
   }
