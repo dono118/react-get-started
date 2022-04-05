@@ -4,22 +4,23 @@ import List from './List'
 
 export default class SearchDemo extends Component {
   state = {
-    users: []
+    users: [], // 初始化数据
+    isFirst: true, // 是否为第一次打开页面
+    isLoading: false, // 标识是否处于加载中
+    err: '' // 存储请求相关的错误信息
   }
 
-  // 保存
-  saveUsers = users => {
-    this.setState({
-      users
-    })
+  // 更新state
+  updateSearchState = stateObj => {
+    this.setState(stateObj)
   }
 
   render() {
-    const { users } = this.state
+    // const { users } = this.state
     return (
       <div className="container">
-        <Search saveUsers={this.saveUsers} />
-        <List users={users} />
+        <Search updateSearchState={this.updateSearchState} />
+        <List {...this.state} />
       </div>
     )
   }
