@@ -1,11 +1,11 @@
 import './App.css'
-import SearchDemo from '@/views/searchDemo'
+import EmailCheck from '@/views/emailCheck'
 
 function App() {
   return (
     <div className="App">
       <h1>Learn React</h1>
-      <SearchDemo />
+      <EmailCheck />
     </div>
   )
 }
