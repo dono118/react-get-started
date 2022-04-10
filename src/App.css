@@ -1,3 +1,4 @@
-.App {
-  padding: 0 10px;
+.nl-active {
+  background-color: #dd9530 !important;
+  color: #fff !important;
 }
