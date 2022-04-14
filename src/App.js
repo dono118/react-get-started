@@ -1,9 +1,8 @@
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Header from './components/Header' // Header是一般组件
 import ENavLink from './components/ENavLink'
 import Home from './views/Home' // Home是路由组件
 import About from './views/About' // About是路由组件
-import Test from './views/Test'
 import './App.css'
 
 function App() {
@@ -25,11 +24,13 @@ function App() {
         <div className="col-xs-6">
           <div className="panel">
             <div className="panel-body">
-              {/* 展示区-Route标签进行路径的匹配 Swith可以提高路由的匹配效率(单一匹配) */}
+              {/* 展示区-Route标签进行路径的匹配 Swith可以提高路由的匹配效率(单一匹配)  Redirect 路由转发 */}
               <Switch>
+                {/* exact 严格匹配，一般情况下不开启 只有需要时才开启 */}
+                {/* <Route exact path="/home" component={Home} /> */}
                 <Route path="/home" component={Home} />
                 <Route path="/about" component={About} />
-                <Route path="/about" component={Test} />
+                <Redirect to="/home" />
               </Switch>
             </div>
           </div>
