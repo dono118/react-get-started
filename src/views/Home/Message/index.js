@@ -1,20 +1,33 @@
 import React, { Component } from 'react'
+import { Link, Route } from 'react-router-dom'
+import Detail from './Detail'
 
 export default class Message extends Component {
+  state = {
+    msgArr: [
+      { id: '01', title: '消息1' },
+      { id: '02', title: '消息2' },
+      { id: '03', title: '消息3' }
+    ]
+  }
+
   render() {
+    const { msgArr } = this.state
     return (
       <div>
         <ul>
-          <li>
-            <a href="/message1">message001</a>
-          </li>
-          <li>
-            <a href="/message2">message002</a>
-          </li>
-          <li>
-            <a href="/message3">message003</a>
-          </li>
+          {msgArr.map(item => {
+            return (
+              <li key={item.id}>
+                {/* 向路由组件传递params参数 */}
+                <Link to={`/home/message/detail/${item.id}`}>{item.title}</Link>
+              </li>
+            )
+          })}
         </ul>
+        <hr />
+        {/* 声明接受params参数 */}
+        <Route path="/home/message/detail/:id" component={Detail} />
       </div>
     )
   }
