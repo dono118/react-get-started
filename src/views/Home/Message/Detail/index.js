@@ -7,8 +7,14 @@ const rawData = [
 ]
 export default class Detail extends Component {
   render() {
+    console.log(this.props)
     // 接收params参数
-    const { id } = this.props.match.params
+    // const { id } = this.props.match.params
+
+    // 接收search参数
+    const { search } = this.props.location
+    const params = new URLSearchParams(search)
+    const id = params.get('id')
     const msg = rawData.find(item => item.id === id)
     return (
       <div>

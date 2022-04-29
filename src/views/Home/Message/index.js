@@ -20,14 +20,22 @@ export default class Message extends Component {
             return (
               <li key={item.id}>
                 {/* 向路由组件传递params参数 */}
-                <Link to={`/home/message/detail/${item.id}`}>{item.title}</Link>
+                {/* <Link to={`/home/message/detail/${item.id}`}>{item.title}</Link> */}
+
+                {/* 向路由组件传递search参数 */}
+                <Link to={`/home/message/detail?id=${item.id}`}>
+                  {item.title}
+                </Link>
               </li>
             )
           })}
         </ul>
         <hr />
-        {/* 声明接受params参数 */}
-        <Route path="/home/message/detail/:id" component={Detail} />
+        {/* 声明接收params参数 */}
+        {/* <Route path="/home/message/detail/:id" component={Detail} /> */}
+
+        {/* search参数无需声明接收 */}
+        <Route path="/home/message/detail" component={Detail} />
       </div>
     )
   }
