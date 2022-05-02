@@ -12,10 +12,14 @@ export default class Detail extends Component {
     // const { id } = this.props.match.params
 
     // 接收search参数
-    const { search } = this.props.location
-    const params = new URLSearchParams(search)
-    const id = params.get('id')
-    const msg = rawData.find(item => item.id === id)
+    // const { search } = this.props.location
+    // const params = new URLSearchParams(search)
+    // const id = params.get('id')
+
+    // 接收state参数
+    const { id } = this.props.location.state || {}
+
+    const msg = rawData.find(item => item.id === id) || {}
     return (
       <div>
         <ul>
