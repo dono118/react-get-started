@@ -12,10 +12,14 @@ export default class Home extends Component {
         <div>
           <ul className="nav nav-tabs">
             <li>
-              <ENavLink to="/home/news">News</ENavLink>
+              <ENavLink replace to="/home/news">
+                News
+              </ENavLink>
             </li>
             <li>
-              <ENavLink to="/home/message">Message</ENavLink>
+              <ENavLink replace to="/home/message">
+                Message
+              </ENavLink>
             </li>
           </ul>
         </div>

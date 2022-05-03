@@ -29,6 +29,7 @@ export default class Message extends Component {
 
                 {/* 向路由组件传递state参数 */}
                 <Link
+                  replace
                   to={{
                     pathname: '/home/message/detail',
                     state: { id: item.id }
