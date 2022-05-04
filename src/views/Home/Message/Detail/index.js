@@ -9,7 +9,7 @@ export default class Detail extends Component {
   render() {
     console.log(this.props)
     // 接收params参数
-    // const { id } = this.props.match.params
+    const { id } = this.props.match.params
 
     // 接收search参数
     // const { search } = this.props.location
@@ -17,7 +17,7 @@ export default class Detail extends Component {
     // const id = params.get('id')
 
     // 接收state参数
-    const { id } = this.props.location.state || {}
+    // const { id } = this.props.location.state || {}
 
     const msg = rawData.find(item => item.id === id) || {}
     return (

@@ -11,6 +11,11 @@ export default class Message extends Component {
     ]
   }
 
+  // 编程式路由导航
+  handleReplaceShow = id => {
+    this.props.history.replace(`/home/message/detail/${id}`)
+  }
+
   render() {
     const { msgArr } = this.state
     return (
@@ -20,15 +25,17 @@ export default class Message extends Component {
             return (
               <li key={item.id}>
                 {/* 向路由组件传递params参数 */}
-                {/* <Link to={`/home/message/detail/${item.id}`}>{item.title}</Link> */}
-
+                <Link to={`/home/message/detail/${item.id}`}>{item.title}</Link>
+                &nbsp;
+                <button onClick={() => this.handleReplaceShow(item.id)}>
+                  replace查看
+                </button>
                 {/* 向路由组件传递search参数 */}
                 {/* <Link to={`/home/message/detail?id=${item.id}`}>
                   {item.title}
                 </Link> */}
-
                 {/* 向路由组件传递state参数 */}
-                <Link
+                {/* <Link
                   replace
                   to={{
                     pathname: '/home/message/detail',
@@ -36,20 +43,20 @@ export default class Message extends Component {
                   }}
                 >
                   {item.title}
-                </Link>
+                </Link> */}
               </li>
             )
           })}
         </ul>
         <hr />
         {/* 声明接收params参数 */}
-        {/* <Route path="/home/message/detail/:id" component={Detail} /> */}
+        <Route path="/home/message/detail/:id" component={Detail} />
 
         {/* search参数无需声明接收 */}
         {/* <Route path="/home/message/detail" component={Detail} /> */}
 
         {/* state参数无需声明接收 */}
-        <Route path="/home/message/detail" component={Detail} />
+        {/* <Route path="/home/message/detail" component={Detail} /> */}
       </div>
     )
   }
