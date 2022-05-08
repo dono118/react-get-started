@@ -7,7 +7,7 @@ const rawData = [
 ]
 export default class Detail extends Component {
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     // 接收params参数
     const { id } = this.props.match.params
 
