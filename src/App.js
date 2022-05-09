@@ -1,42 +1,30 @@
-import { Switch, Route, Redirect } from 'react-router-dom'
-import Header from './components/Header' // Header是一般组件
-import ENavLink from './components/ENavLink'
-import Home from './views/Home' // Home是路由组件
-import About from './views/About' // About是路由组件
-import './App.css'
+import React, { useState } from 'react'
+import { ConfigProvider, DatePicker, message } from 'antd'
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import zhCN from 'antd/lib/locale/zh_CN'
+import moment from 'moment'
+import 'moment/locale/zh-cn'
+import 'antd/dist/antd.min.css'
 
-function App() {
+moment.locale('zh-cn')
+
+const App = () => {
+  const [date, setDate] = useState(null)
+  const handleChange = value => {
+    message.info(
+      `您选择的日期是: ${value ? value.format('YYYY年MM月DD日') : '未选择'}`
+    )
+    setDate(value)
+  }
   return (
-    <div>
-      <div className="row">
-        <div className="col-xs-offset-2 col-xs-8">
-          <Header />
+    <ConfigProvider locale={zhCN}>
+      <div style={{ width: 400, margin: '100px auto' }}>
+        <DatePicker onChange={handleChange} />
+        <div style={{ marginTop: 16 }}>
+          当前日期：{date ? date.format('YYYY年MM月DD日') : '未选择'}
         </div>
       </div>
-      <div className="row">
-        <div className="col-xs-2 col-xs-offset-2">
-          <div className="list-group">
-            {/* 导航区-a标签改为NavLink标签 */}
-            <ENavLink to="/home">Home</ENavLink>
-            <ENavLink to="/about">About</ENavLink>
-          </div>
-        </div>
-        <div className="col-xs-6">
-          <div className="panel">
-            <div className="panel-body">
-              {/* 展示区-Route标签进行路径的匹配 Swith可以提高路由的匹配效率(单一匹配)  Redirect 路由转发 */}
-              <Switch>
-                {/* exact 严格匹配，一般情况下不开启 只有需要时才开启 */}
-                {/* <Route exact path="/home" component={Home} /> */}
-                <Route path="/home" component={Home} />
-                <Route path="/about" component={About} />
-                <Redirect to="/home" />
-              </Switch>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </ConfigProvider>
   )
 }
 
