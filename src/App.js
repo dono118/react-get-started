@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ConfigProvider, DatePicker, message } from 'antd'
+import { ConfigProvider, DatePicker, message, Alert } from 'antd'
 // 由于 antd 组件的默认文案是英文，所以需要修改为中文
 import zhCN from 'antd/lib/locale/zh_CN'
 import moment from 'moment'
@@ -21,7 +21,10 @@ const App = () => {
       <div style={{ width: 400, margin: '100px auto' }}>
         <DatePicker onChange={handleChange} />
         <div style={{ marginTop: 16 }}>
-          当前日期：{date ? date.format('YYYY年MM月DD日') : '未选择'}
+          <Alert
+            message="当前日期"
+            description={date ? date.format('YYYY年MM月DD日') : '未选择'}
+          />
         </div>
       </div>
     </ConfigProvider>
