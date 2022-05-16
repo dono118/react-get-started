@@ -1,22 +1,23 @@
-import React from 'react'
-import { Button } from 'antd'
+import { Space } from 'antd'
+import {
+  HomeOutlined,
+  SettingFilled,
+  SmileOutlined,
+  SyncOutlined,
+  LoadingOutlined
+} from '@ant-design/icons'
 import 'antd/dist/antd.min.css'
-import './App.css'
 
 const App = () => {
   return (
-    <div className="site-button-ghost-wrapper">
-      <Button type="primary" ghost>
-        Primary
-      </Button>
-      <Button ghost>Default</Button>
-      <Button type="dashed" ghost>
-        Dashed
-      </Button>
-      <Button type="primary" danger ghost>
-        Danger
-      </Button>
-    </div>
+    <Space>
+      <HomeOutlined />
+      <SettingFilled />
+      <SmileOutlined />
+      <SyncOutlined spin />
+      <SmileOutlined rotate={180} />
+      <LoadingOutlined />
+    </Space>
   )
 }
 export default App
