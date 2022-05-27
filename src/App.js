@@ -1,24 +1,19 @@
-import { Space } from 'antd'
-import { createFromIconfontCN } from '@ant-design/icons'
+import { Steps } from 'antd'
 import 'antd/dist/antd.min.css'
 
-const IconFont = createFromIconfontCN({
-  scriptUrl: [
-    '//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js', // icon-javascript, icon-java, icon-shoppingcart (overrided)
-    '//at.alicdn.com/t/font_1788592_a5xf2bdic3u.js' // icon-shoppingcart, icon-python
-  ]
-})
+const { Step } = Steps
 
 const App = () => {
   return (
-    <Space>
-      <Space>
-        <IconFont type="icon-javascript" />
-        <IconFont type="icon-java" />
-        <IconFont type="icon-shoppingcart" />
-        <IconFont type="icon-python" />
-      </Space>
-    </Space>
+    <Steps current={1}>
+      <Step title="Finished" description="This is a description." />
+      <Step
+        title="In Progress"
+        subTitle="Left 00:00:08"
+        description="This is a description."
+      />
+      <Step title="Waiting" description="This is a description." />
+    </Steps>
   )
 }
 export default App
